@@ -1,0 +1,154 @@
+{
+  "experiment_date": "2026-05-03T14:17:31.681038",
+  "dataset": {
+    "total_bsms": 1526428,
+    "benign_bsms": 1383672,
+    "attack_bsms": 142756,
+    "attack_ratio_percent": 9.35,
+    "test_set_size": 457929
+  },
+  "baseline_ai_nids_only": {
+    "accuracy_percent": 99.6277,
+    "precision_percent": 96.2045,
+    "recall_percent": 99.9626,
+    "f1_score_percent": 98.0476,
+    "latency_per_packet_ms": 0.009097,
+    "confusion_matrix": {
+      "true_negatives": 413413,
+      "false_positives": 1689,
+      "false_negatives": 16,
+      "true_positives": 42811
+    }
+  },
+  "qca_extended_pipeline": {
+    "sample_size": 5000,
+    "predicted_benign": 4464,
+    "predicted_attack": 536,
+    "pqc_verifications_performed": 4464,
+    "total_pipeline_latency_ms": 2174.07,
+    "latency_per_packet_ms": 0.4348,
+    "detection_accuracy_percent": 99.68
+  },
+  "ml_dsa_65_standalone": {
+    "verification_latency_ms": 1.6903,
+    "key_sizes_bytes": {
+      "public_key": 1952,
+      "secret_key": 4032,
+      "signature": 3309
+    }
+  },
+  "urllc_compliance": {
+    "threshold_ms": 10,
+    "baseline_utilisation_percent": 0.09,
+    "qca_extended_utilisation_percent": 4.35
+  },
+  "noise_resilience": {
+    "description": "Gaussian noise injection on natural distribution test set (n=457929)",
+    "levels": [
+      {
+        "name": "Clean (0%)",
+        "accuracy_percent": 99.6277,
+        "recall_percent": 99.9626,
+        "f1_percent": 98.0476
+      },
+      {
+        "name": "Minimal (5%)",
+        "accuracy_percent": 96.6353,
+        "recall_percent": 64.6064,
+        "f1_percent": 78.2207
+      },
+      {
+        "name": "Moderate (10%)",
+        "accuracy_percent": 96.1496,
+        "recall_percent": 60.1536,
+        "f1_percent": 74.504
+      },
+      {
+        "name": "Heavy (20%)",
+        "accuracy_percent": 95.814,
+        "recall_percent": 57.9915,
+        "f1_percent": 72.15
+      },
+      {
+        "name": "Extreme (30%)",
+        "accuracy_percent": 95.522,
+        "recall_percent": 56.5578,
+        "f1_percent": 70.26
+      }
+    ],
+    "key_insight": "Recall drops sharply under noise, demonstrating necessity of layered defence with PQC verification"
+  },
+  "scalability_test": {
+    "description": "Per-packet latency under varying batch sizes (Random Forest baseline)",
+    "urllc_threshold_ms": 10,
+    "batches": [
+      {
+        "batch_size": 100,
+        "total_ms": 49.0225,
+        "per_packet_ms": 0.490225,
+        "accuracy_percent": 100.0
+      },
+      {
+        "batch_size": 500,
+        "total_ms": 82.4728,
+        "per_packet_ms": 0.164946,
+        "accuracy_percent": 99.8
+      },
+      {
+        "batch_size": 1000,
+        "total_ms": 76.3811,
+        "per_packet_ms": 0.076381,
+        "accuracy_percent": 99.8
+      },
+      {
+        "batch_size": 2000,
+        "total_ms": 111.7991,
+        "per_packet_ms": 0.0559,
+        "accuracy_percent": 99.3
+      },
+      {
+        "batch_size": 5000,
+        "total_ms": 175.1713,
+        "per_packet_ms": 0.035034,
+        "accuracy_percent": 99.66
+      },
+      {
+        "batch_size": 10000,
+        "total_ms": 262.9036,
+        "per_packet_ms": 0.02629,
+        "accuracy_percent": 99.53
+      }
+    ],
+    "key_insights": [
+      "Per-packet latency decreased ~18.6x as batch size scaled from 100 to 10000",
+      "Accuracy remained stable ~99.5% across all batch sizes",
+      "All batch sizes operated well under URLLC 10ms threshold"
+    ]
+  },
+  "rf_vs_xgboost_comparison": {
+    "description": "Direct algorithm comparison on natural distribution VeReMi (n_test=457929)",
+    "random_forest": {
+      "accuracy_percent": 99.6277,
+      "precision_percent": 96.2045,
+      "recall_percent": 99.9626,
+      "f1_percent": 98.0476,
+      "latency_per_packet_ms": 0.0091,
+      "false_negatives": 16,
+      "false_positives": 1689,
+      "training_time_seconds": 200.7
+    },
+    "xgboost": {
+      "accuracy_percent": 97.7003,
+      "precision_percent": 84.302,
+      "recall_percent": 92.6658,
+      "f1_percent": 88.2863,
+      "latency_per_packet_ms": 0.001959,
+      "false_negatives": 3141,
+      "false_positives": 7390,
+      "training_time_seconds": 15.8,
+      "scale_pos_weight": 9.6926
+    },
+    "selected_algorithm": "Random Forest",
+    "justification": "RF detects 99.9626% of attacks (16 FN vs XGBoost 3141 FN) at negligible latency cost (both far under URLLC 10ms threshold)"
+  }
+}

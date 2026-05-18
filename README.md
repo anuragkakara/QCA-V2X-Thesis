@@ -29,3 +29,42 @@ The QCA framework proposes a layered "AI-first, Quantum-second" defence architec
 | Scalability Improvement (batch 100→10,000) | 18.6× |
 
 ## Repository Structure
+Each subfolder contains its own README with detailed contents and usage instructions.
+
+## Quick Start
+
+To regenerate any figure from the thesis:
+
+1. Open the corresponding notebook from the `notebooks/` folder in Google Colab
+2. Mount Google Drive when prompted
+3. Run all cells (Runtime → Run all)
+4. The figure saves automatically to your Google Drive
+
+All notebooks use locked empirical values from `results/empirical_results.json`, ensuring perfect reproducibility.
+
+## Technical Stack
+
+- **Language:** Python 3 (Google Colab default runtime)
+- **ML Library:** scikit-learn (Random Forest, XGBoost) — used in the original experimental pipeline
+- **Cryptography:** pqcrypto (ML-DSA-65 / CRYSTALS-Dilithium, NIST FIPS 204)
+- **Visualisation:** matplotlib
+- **Environment:** Google Colab
+- **Dataset:** VeReMi (Vehicular Reference Misbehavior dataset)
+
+## Dataset Acknowledgement
+
+This work uses the **VeReMi dataset** (van der Heijden et al., 2018) and the **VeReMi Extension** (Kamel et al., 2020), which are publicly available benchmarks for V2X misbehaviour detection research.
+
+## Reproducibility
+
+The figure generation notebooks in this repository load values directly from `results/empirical_results.json`. This separation between empirical data and visualisation logic ensures:
+
+- ✅ Figures can be regenerated without re-running the full experimental pipeline
+- ✅ All values shown in figures exactly match the thesis prose and tables
+- ✅ Examiners can verify the relationship between data and visualisation independently
+
+The original experimental pipeline (VeReMi preprocessing, model training, ML-DSA-65 verification, scalability and noise testing) is documented in detail in Chapter 4 of the thesis, with all measurements recorded in `results/empirical_results.json`.
+
+## Licence
+
+This work is released under the MIT Licence. See the [LICENSE](LICENSE) file for details.

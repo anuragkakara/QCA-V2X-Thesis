@@ -6,7 +6,9 @@ This folder contains the empirical data generated during the experimental evalua
 
 ### `empirical_results.json`
 
-A comprehensive JSON file containing all measured values from the experiments described in Chapter 5 of the thesis. The file is structured into the following sections:
+A comprehensive JSON file containing all measured values from the experiments described in Chapter 5 of the thesis. This file serves as the **single source of truth** for all numerical values reported throughout the thesis.
+
+The file is structured into the following sections:
 
 | Section | Maps To Thesis Section |
 |---|---|
@@ -21,16 +23,23 @@ A comprehensive JSON file containing all measured values from the experiments de
 
 ## Dataset Source
 
-All experiments use the publicly available VeReMi dataset (van der Heijden et al., 2018) with the 70/30 stratified train/test split methodology described in Chapter 4.
+All experiments use the publicly available **VeReMi dataset** (van der Heijden et al., 2018) with the 70/30 stratified train/test split methodology described in Chapter 4 of the thesis.
 
-## Reproducibility
+## Relationship To Figures And Notebooks
 
-These results were generated using the notebooks in the `notebooks/` folder. To reproduce, run the corresponding notebook in Google Colab with the VeReMi dataset.
+The figure generation notebooks in the `notebooks/` folder load values **directly from this JSON file** to render the thesis figures. This ensures perfect consistency between:
+
+- ✅ The numerical values reported in thesis prose
+- ✅ The values shown in thesis tables
+- ✅ The values plotted in thesis figures
+- ✅ The data preserved in this empirical results file
 
 ## Date Of Experiments
 
-Experiments conducted: 2026-05-03
+Experiments conducted: **2026-05-03**
 
 ## Format
 
-JSON format (UTF-8) for machine readability and easy parsing in Python, R, or any modern data analysis tool.
+JSON format (UTF-8) for machine readability and easy parsing in Python, R, or any modern data analysis tool. The file can be loaded with:
+
+```python

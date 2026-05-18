@@ -59,9 +59,9 @@ This work uses the **VeReMi dataset** (van der Heijden et al., 2018) and the **V
 
 The figure generation notebooks in this repository load values directly from `results/empirical_results.json`. This separation between empirical data and visualisation logic ensures:
 
-- ✅ Figures can be regenerated without re-running the full experimental pipeline
-- ✅ All values shown in figures exactly match the thesis prose and tables
-- ✅ Examiners can verify the relationship between data and visualisation independently
+-  Figures can be regenerated without re-running the full experimental pipeline
+-  All values shown in figures exactly match the thesis prose and tables
+-  Examiners can verify the relationship between data and visualisation independently
 
 The original experimental pipeline (VeReMi preprocessing, model training, ML-DSA-65 verification, scalability and noise testing) is documented in detail in Chapter 4 of the thesis, with all measurements recorded in `results/empirical_results.json`.
 

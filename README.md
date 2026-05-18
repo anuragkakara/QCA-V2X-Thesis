@@ -14,7 +14,7 @@ The QCA framework proposes a layered "AI-first, Quantum-second" defence architec
 
 1. **AI-NIDS Behavioural Pre-Filter** — Random Forest classifier trained on the VeReMi dataset
 2. **Post-Quantum Cryptographic Verification** — ML-DSA-65 signatures (NIST FIPS 204 standard)
-3. **Layered Defence Pipeline** — End-to-end latency analysis against URLLC 10ms safety threshold
+3. **Layered Defence Pipeline** — End-to-end latency analysis against URLLC 10 ms safety threshold
 
 ## Key Empirical Findings
 

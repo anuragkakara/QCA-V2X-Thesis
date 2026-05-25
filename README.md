@@ -26,7 +26,7 @@ The QCA framework proposes a layered "AI-first, Quantum-second" defence architec
 | ML-DSA-65 Verification Latency | 1.6903 ms |
 | QCA Pipeline Total Latency | 0.4348 ms |
 | URLLC Budget Utilisation | 4.35% |
-| Scalability Improvement (batch 100→10,000) | 18.6× |
+| Per-Packet Latency Reduction (batch 100→10,000) | 18.6× |
 
 ## Repository Structure
 Each subfolder contains its own README with detailed contents and usage instructions.

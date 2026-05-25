@@ -3,9 +3,9 @@ This folder contains the Google Colab notebooks used to generate the figures and
 ## Contents
 | Notebook | Generates | Thesis Reference |
 |---|---|---|
-| `figure_09_baseline_metrics.ipynb` | Figure 9 | Section 5.2 (Baseline AI-NIDS performance) |
-| `figure_10_qca.ipynb` | Figure 10 | Section 5.3 (QCA-integrated pipeline) |
-| `figure_11_comparison.ipynb` | Figure 11 | Section 5.4 (Baseline vs QCA comparison) |
+| `figure_5.1_baseline_metrics.ipynb` | Figure 5.1 | Section 5.2 (Baseline AI-NIDS performance) |
+| `figure_5.2_qca.ipynb` | Figure 5.2 | Section 5.3 (QCA-integrated pipeline) |
+| `figure_5.3_comparison.ipynb` | Figure 5.3 | Section 5.4 (Baseline vs QCA comparison) |
 | `figure_B1_scalability.ipynb` | Figure B.1 | Appendix B.1 (Scalability stress test) |
 | `figure_B2_noise.ipynb` | Figure B.2 | Appendix B.2 (Noise resilience evaluation) |
 | `figure_C.1_rf_vs_xgboost.ipynb` | Figure C.1 | Appendix C (RF vs XGBoost comparison) |

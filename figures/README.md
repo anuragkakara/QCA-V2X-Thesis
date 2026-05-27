@@ -6,7 +6,7 @@ This folder contains the figures used in the thesis, generated using matplotlib 
 | `figure_5.1_baseline_metrics.png` | Figure 5.1 (Section 5.2) | Baseline AI-NIDS performance metrics and end-to-end latency (Random Forest classifier) |
 | `figure_5.2_qca.png` | Figure 5.2 (Section 5.3) | QCA-integrated pipeline performance metrics (AI-NIDS + ML-DSA-65) |
 | `figure_5.3_comparison.png` | Figure 5.3 (Section 5.4) | Side-by-side comparison of baseline AI-NIDS and QCA-integrated pipeline |
-| `figure_B.1_scalability_.png` | Figure B.1 (Appendix B.1) | Scalability stress test — per-packet latency and detection accuracy across batch sizes (100–10,000) |
+| `figure_B.1_scalability.png` | Figure B.1 (Appendix B.1) | Scalability stress test — per-packet latency and detection accuracy across batch sizes (100–10,000) |
 | `figure_B.2_noise.png` | Figure B.2 (Appendix B.2) | Detection reliability under simulated environmental noise (0%–30%) |
 | `figure_C.1_rf_vs_xgboost.png` | Figure C.1 (Appendix C) | Random Forest vs XGBoost comparison — detection metrics and inference latency against URLLC threshold |
 | `figure_C.2_confusion_matrix.png` | Figure C.2 (Appendix C) | Confusion matrix for the Random Forest classifier on the VeReMi test set (n = 457,929) |

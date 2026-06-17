@@ -4,7 +4,7 @@
 
 This repository contains the code, empirical data, and figures supporting a Master's by Research thesis on V2X network security:
 
-> *"Advancing Intrusion Detection in AI-based Vehicle-to-Everything (V2X) Networks: An Approach Involving Quantum Cryptography Authentication (QCA)"*
+> *"Advancing AI-Based Intrusion Detection in Vehicle-to-Everything (V2X) Networks via Quantum Cryptography Authentication (QCA)"*
 
 ## Overview
 
